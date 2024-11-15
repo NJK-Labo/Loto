@@ -1,18 +1,6 @@
-<html>
-<head>
-  <meta charset=”UTF-8″>
-  <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
-  <title>Loto6予想アプリ</title>
-  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-</head>
-<body>
-  <py-script>
-  import random
-  number_of_sets = 5
-  numbers = [random.sample(range(1, 44), 6) for _ in range(number_of_sets)]
-  for i, lottery_numbers in enumerate(numbers, 1):
-    print(f"セット{i} =", lottery_numbers)
-  </py-script>
-</body>
-</html>
+import random
+number_of_sets = 5
+
+for i, lottery_numbers in enumerate(range(number_of_sets), 1):
+    number = list(random.sample(range(1, 44), 6))
+    print(f"セット{i} = {number}")
