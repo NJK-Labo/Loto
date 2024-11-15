@@ -1,7 +1,7 @@
 <html>
 <head>
-  <meta charset=”UTF-8″>
-  <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Loto6予想アプリ</title>
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
@@ -9,10 +9,16 @@
 <body>
   <py-script>
   import random
+
+  def generate_unique_numbers():
+      while True:
+          numbers = random.sample(range(1, 44), 6)
+          if 0 not in numbers:
+              return numbers
+
   number_of_sets = 5
-  numbers = [random.sample(range(1, 44), 6) for _ in range(number_of_sets)]
-  for i, lottery_numbers in enumerate(numbers, 1):
-    print(f"セット{i} =", lottery_numbers)
+  sets_of_numbers = [generate_unique_numbers() for _ in range(number_of_sets)]
+  for i, lottery_numbers in enumerate(sets_of_numbers, 1):
+      print(f"セット{i} =", lottery_numbers)
   </py-script>
 </body>
-</html>
