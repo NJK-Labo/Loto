@@ -1,6 +1,8 @@
 import random
+
 number_of_sets = 5
 
-for i, lottery_numbers in enumerate(range(number_of_sets), 1):
-    number = list(random.sample(range(1, 44), 6))
-    print(f"セット{i} = {number}")
+for i in (range(number_of_sets)):
+    predictions = random.sample(list(range(1, 44)), 6)
+
+    print(f"セット{i} = {predictions}")
