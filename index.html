@@ -1,8 +1,13 @@
 import random
 
-number_of_sets = 6
+number_of_sets = 5
+counter = 1
 
-for i in (range(1, number_of_sets)):
+while counter <= number_of_sets:
     predictions = random.sample(list(range(1, 44)), 6)
 
-    print(f"セット{i} = {predictions}")
+    if 0 in predictions:
+        continue;
+
+    print(f"セット{counter} = {predictions}")
+    counter += 1
