@@ -1,7 +1,7 @@
 <html>
 <head>
-  <meta charset=”UTF-8″>
-  <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Loto6予想アプリ</title>
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
@@ -13,9 +13,8 @@ import random
 
 number_of_sets = 6
 
-for i in (range(1, number_of_sets)):
-    predictions = random.sample(list(range(1, 44)), 6)
-
+for i in range(1, number_of_sets):
+    predictions = sorted(random.sample(list(range(1, 44)), 6))
     print(f"{i} = {predictions}")
   </py-script>
 </body>
