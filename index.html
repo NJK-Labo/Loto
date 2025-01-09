@@ -1,7 +1,7 @@
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset=”UTF-8″>
+  <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
   <title>Loto6予想アプリ</title>
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
@@ -10,43 +10,13 @@
 Loto6 予想サイト
   <py-script>
 import random
-lot1 = random.randint(0, 43) 
-lot2 = random.randint(0, 43) 
-lot3 = random.randint(0, 43) 
-lot4 = random.randint(0, 43) 
-lot5 = random.randint(0, 43) 
-lot6 = random.randint(0, 43) 
 
-while lot1 == lot2: 
-lot2 = random.randint(0, 43) 
+number_of_sets = 6
 
-while lot1 == lot3 | lot2 == lot3: 
-lot3 = random.randint(0, 43) 
+for i in (range(1, number_of_sets)):
+    predictions = random.sample(list(range(1, 44)), 6)
 
-while lot1 == lot4 | lot2 == lot4 | lot3 == lot4: 
-lot4 = random.randint(0, 43) 
-
-while lot1 == lot5 | lot2 == lot5 | lot3 == lot5 | lot4 == lot5: 
-lot5 = random.randint(0, 43) 
-
-while lot1 == lot6 | lot2 == lot6 | lot3 == lot6 | lot4 == lot6 | lot5 == lot6: 
-lot5 = random.randint(0, 43) 
-result = lot1,lot2,lot3,lot4,lot5,lot6 print(result)
-
----
-
-import random
-lottery_numbers = random.sample(range(0, 44), 6) 
-print("結果 =", lottery_numbers)
-
----
-
-import random
-number_of_sets = 5
-numbers = [random.sample(range(0, 44), 6) for _ in range(number_of_sets)]
-for i, lottery_numbers in enumerate(numbers, 1):
-    print(f"セット{i} =", lottery_numbers)
-
+    print(f"{i} = {predictions}")
   </py-script>
 </body>
 </html>
