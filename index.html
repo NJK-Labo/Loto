@@ -7,16 +7,12 @@
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
-Loto6 予想サイト
   <py-script>
-import random
-
-number_of_sets = 6
-
-for i in (range(1, number_of_sets)):
-    predictions = random.sample(list(range(1, 44)), 6)
-
-    print(f"{i} = {predictions}")
+  import random
+  number_of_sets = 5
+  numbers = [random.sample(range(0, 44), 6) for _ in range(number_of_sets)]
+  for i, lottery_numbers in enumerate(numbers, 1):
+    print(f"セット{i} =", lottery_numbers)
   </py-script>
 </body>
 </html>
